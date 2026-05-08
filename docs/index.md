@@ -1,17 +1,32 @@
-# Welcome to MkDocs
+# TODO LIST
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Projeto desenvolvido utilizando SPEC-DRIVEN Development.
 
-## Commands
+## Objetivo
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+O sistema permite:
 
-## Project layout
+- Cadastro de tarefas
+- Remoção de tarefas
+- Listagem de tarefas
+- Definição de lembretes
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Arquitetura
+
+O projeto utiliza:
+
+- MVC
+- Monorepo
+- React
+- Node.js
+- Express
+- MkDocs
+
+## Estrutura
+
+```txt
+apps/
+ ├── backend/
+ └── frontend/
+
+docs/
