@@ -8,7 +8,7 @@ function App() {
   const [description, setDescription] = useState("");
   const [reminder, setReminder] = useState("");
 
-  const API = "http://localhost:3000/tasks";
+  const API = "https://todo-list-cvbk.onrender.com";
 
   async function loadTasks() {
     const response = await axios.get(API);
