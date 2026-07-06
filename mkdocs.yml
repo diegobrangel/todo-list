@@ -1,1 +1,13 @@
-site_name: My Docs
+site_name: TODO List Docs
+site_description: Documentação do sistema de gerenciamento de tarefas (Spec-Driven Development)
+repo_url: https://github.com/diegobrangel/todo-list
+
+nav:
+  - Início: index.md
+  - Constituição: constitution.md
+  - Feature 001 - Todo List MVP:
+      - Especificação: specs/001-todo-list-mvp/spec.md
+      - Plano: specs/001-todo-list-mvp/plan.md
+      - Modelo de Dados: specs/001-todo-list-mvp/data-model.md
+      - Contrato da API: specs/001-todo-list-mvp/contracts/tasks-api.md
+      - Tarefas: specs/001-todo-list-mvp/tasks.md
