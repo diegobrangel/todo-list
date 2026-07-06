@@ -146,6 +146,7 @@
 <li><strong>Stack obrigatória</strong>: Node.js + Express no backend; React + Vite no frontend. Trocar a stack exige emenda a esta constituição.</li>
 <li><strong>Contrato de API</strong>: rotas de tarefas expostas sob <code>/tasks</code> (ou prefixo equivalente), respondendo JSON. Mudanças de contrato devem ser descritas em <code>contracts/</code> na spec da feature.</li>
 <li><strong>CORS</strong>: o backend deve permitir requisições do frontend (dev e produção) via middleware <code>cors</code>.</li>
+<li><strong>Sem URL hardcoded</strong>: o frontend nunca deve ter a URL da API fixa no código-fonte. A URL vem de <code>VITE_API_BASE_URL</code> (<code>.env.development</code>/<code>.env.production</code>), permitindo apontar o mesmo build para ambientes diferentes sem recompilar lógica.</li>
 </ul>
 <h2 id="development-workflow">Development Workflow</h2>
 <ul>
@@ -160,7 +161,7 @@
 2. Atualização de specs/plans afetados.
 3. Revisão de pelo menos um mantenedor antes do merge.</p>
 <p>Toda spec e plano de implementação devem verificar conformidade com os princípios acima antes de avançar de fase (ver seção "Constitution Check" em <code>plan.md</code>).</p>
-<p><strong>Version</strong>: 1.0.0 | <strong>Ratified</strong>: 2026-07-06 | <strong>Last Amended</strong>: 2026-07-06</p></div>
+<p><strong>Version</strong>: 1.1.0 | <strong>Ratified</strong>: 2026-07-06 | <strong>Last Amended</strong>: 2026-07-06</p></div>
             </div>
         </div>
 

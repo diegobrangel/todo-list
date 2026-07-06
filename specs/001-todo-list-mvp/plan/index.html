@@ -143,7 +143,7 @@
 <p><strong>Primary Dependencies</strong>: Express 5, cors (backend); React 19, axios, Vite (frontend)</p>
 <p><strong>Storage</strong>: Array em memória (<code>apps/backend/src/models/taskModel.js</code>) — sem banco de dados (RNF03)</p>
 <p><strong>Testing</strong>: Não há suíte automatizada configurada (<code>npm test</code> é placeholder no backend); validação manual via <code>quickstart.md</code></p>
-<p><strong>Target Platform</strong>: Backend hospedado no Render, frontend hospedado na Vercel</p>
+<p><strong>Target Platform</strong>: Backend hospedado no Render, frontend hospedado na Vercel. URL da API configurada via <code>VITE_API_BASE_URL</code> (<code>apps/frontend/.env.development</code> → <code>http://localhost:3000</code>, <code>.env.production</code> → URL do Render), nunca hardcoded no código.</p>
 <p><strong>Project Type</strong>: Web application (frontend + backend monorepo)</p>
 <p><strong>Performance Goals</strong>: Uso individual/local — sem metas de carga concorrente definidas</p>
 <p><strong>Constraints</strong>: Dados não persistem entre reinícios do backend (limitação aceita por decisão de arquitetura)</p>
@@ -155,7 +155,7 @@
 <li>✅ MVC no Backend — <code>models/</code>, <code>controllers/</code>, <code>routes/</code> presentes e usados corretamente.</li>
 <li>✅ Persistência em Memória — <code>taskModel.js</code> é um array em memória, sem banco de dados.</li>
 <li>✅ Simplicidade (YAGNI) — nenhuma dependência além do necessário para CRUD + CORS.</li>
-<li>⚠️ Documentação Viva — antes desta mudança, a documentação (<code>docs/</code>) não seguia o formato Spec Kit; corrigido por esta feature retroativa.</li>
+<li>✅ Documentação Viva — <code>docs/</code> segue o formato Spec Kit (corrigido por esta feature retroativa); README e specs mantidos em sincronia com o código após revisão de conformidade.</li>
 </ul>
 <p>Nenhuma violação exige justificativa em Complexity Tracking.</p>
 <h2 id="project-structure">Project Structure</h2>
