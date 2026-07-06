@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        <meta name="description" content="Documentação do sistema de gerenciamento de tarefas (Spec-Driven Development)">
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>My Docs</title>
+        <title>TODO List Docs</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/fontawesome.min.css" rel="stylesheet">
         <link href="css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">My Docs</a>
+                <a class="navbar-brand" href=".">TODO List Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,35 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="." class="nav-link active" aria-current="page">TODO LIST</a>
+                                <a href="." class="nav-link active" aria-current="page">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a href="constitution/" class="nav-link">Constitution</a>
+                                <a href="constitution/" class="nav-link">Constituição</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="specification/" class="nav-link">Specification</a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Feature 001 - Todo List MVP</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="specs/001-todo-list-mvp/spec/" class="dropdown-item">Especificação</a>
+</li>
+                                    
+<li>
+    <a href="specs/001-todo-list-mvp/plan/" class="dropdown-item">Plano</a>
+</li>
+                                    
+<li>
+    <a href="specs/001-todo-list-mvp/data-model/" class="dropdown-item">Modelo de Dados</a>
+</li>
+                                    
+<li>
+    <a href="specs/001-todo-list-mvp/contracts/tasks-api/" class="dropdown-item">Contrato da API</a>
+</li>
+                                    
+<li>
+    <a href="specs/001-todo-list-mvp/tasks/" class="dropdown-item">Tarefas</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -60,6 +82,9 @@
                                 <a rel="next" href="constitution/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/diegobrangel/todo-list/edit/master/docs/index.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -89,6 +114,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fluxo-de-spec-driven-development" class="nav-link">Fluxo de Spec-Driven Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#estrutura" class="nav-link">Estrutura</a>
               <ul class="nav flex-column">
               </ul>
@@ -101,7 +130,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="todo-list">TODO LIST</h1>
-<p>Projeto desenvolvido utilizando SPEC-DRIVEN Development.</p>
+<p>Projeto desenvolvido utilizando Spec-Driven Development (SDD), com o <a href="https://github.com/github/spec-kit">GitHub Spec Kit</a> como ferramenta de suporte ao fluxo.</p>
 <h2 id="objetivo">Objetivo</h2>
 <p>O sistema permite:</p>
 <ul>
@@ -120,12 +149,28 @@
 <li>Express</li>
 <li>MkDocs</li>
 </ul>
+<h2 id="fluxo-de-spec-driven-development">Fluxo de Spec-Driven Development</h2>
+<p>A governança do projeto vive em <a href="constitution/"><code>constitution.md</code></a> e cada funcionalidade é documentada em <code>specs/&lt;###-feature-name&gt;/</code> antes/junto da implementação:</p>
+<ul>
+<li><strong>Constituição</strong>: princípios não-negociáveis do projeto (stack, arquitetura, persistência).</li>
+<li><strong>Spec</strong>: o quê e por quê da funcionalidade, sem detalhes de implementação.</li>
+<li><strong>Plan</strong>: como implementar — contexto técnico, estrutura de código, checagem contra a constituição.</li>
+<li><strong>Tasks</strong>: checklist executável, organizado por user story.</li>
+</ul>
+<p>Funcionalidade atual documentada: <a href="specs/001-todo-list-mvp/spec/">Todo List MVP</a> (<a href="specs/001-todo-list-mvp/plan/">plano</a>, <a href="specs/001-todo-list-mvp/tasks/">tarefas</a>).</p>
+<p>Novas funcionalidades devem seguir o fluxo <code>/speckit-specify</code> → <code>/speckit-plan</code> → <code>/speckit-tasks</code> → <code>/speckit-implement</code> (skills do Spec Kit para agentes de IA), abrindo uma nova pasta <code>specs/00N-nome-da-feature/</code>.</p>
 <h2 id="estrutura">Estrutura</h2>
-<p>```txt
-apps/
+<pre><code class="language-txt">apps/
  ├── backend/
- └── frontend/</p>
-<p>docs/</p></div>
+ └── frontend/
+
+specs/
+ └── 001-todo-list-mvp/   # spec, plan e tasks da funcionalidade atual
+
+.specify/                 # constituição, templates e scripts do Spec Kit
+
+docs/                     # este site (MkDocs)
+</code></pre></div>
             </div>
         </div>
 
@@ -207,5 +252,5 @@ apps/
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-05-08 17:19:52.994825+00:00
+Build Date UTC : 2026-07-06 17:11:46.266116+00:00
 -->

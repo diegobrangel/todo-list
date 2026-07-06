@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Specification - My Docs</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/fontawesome.min.css" rel="stylesheet">
-        <link href="../css/brands.min.css" rel="stylesheet">
-        <link href="../css/solid.min.css" rel="stylesheet">
-        <link href="../css/v4-font-face.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Contrato da API - TODO List Docs</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">My Docs</a>
+                <a class="navbar-brand" href="../../../..">TODO List Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,35 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href=".." class="nav-link">TODO LIST</a>
+                                <a href="../../../.." class="nav-link">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../constitution/" class="nav-link">Constitution</a>
+                                <a href="../../../../constitution/" class="nav-link">Constituição</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Specification</a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Feature 001 - Todo List MVP</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../spec/" class="dropdown-item">Especificação</a>
+</li>
+                                    
+<li>
+    <a href="../../plan/" class="dropdown-item">Plano</a>
+</li>
+                                    
+<li>
+    <a href="../../data-model/" class="dropdown-item">Modelo de Dados</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Contrato da API</a>
+</li>
+                                    
+<li>
+    <a href="../../tasks/" class="dropdown-item">Tarefas</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -52,14 +74,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../constitution/" class="nav-link">
+                                <a rel="prev" href="../../data-model/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../../tasks/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/diegobrangel/todo-list/edit/master/docs/specs/001-todo-list-mvp/contracts/tasks-api.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -78,21 +103,49 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#contract-tasks-api" class="nav-link">Contract: Tasks API</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#get-tasks" class="nav-link">GET /tasks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#post-tasks" class="nav-link">POST /tasks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#delete-tasksid" class="nav-link">DELETE /tasks/:id</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Requisitos Funcionais
-RF01: O sistema deve permitir cadastrar tarefas
-RF02: O sistema deve listar tarefas
-RF03: O sistema deve remover tarefas
-RF04: O sistema deve permitir adicionar lembretes</p>
-<p>Requisitos Não Funcionais
-RNF01: O sistema deve usar arquitetura MVC
-RNF02: O projeto deve ser monorepo
-RNF03: O sistema deve usar memória temporária
-RNF04: O sistema deve possuir documentação em MkDocs</p></div>
+<h1 id="contract-tasks-api">Contract: Tasks API</h1>
+<p>Base path: <code>/tasks</code> (backend Express, ver <code>apps/backend/src/routes/taskRoutes.js</code>)</p>
+<h2 id="get-tasks">GET /tasks</h2>
+<p>Lista todas as tarefas cadastradas.</p>
+<ul>
+<li><strong>Response 200</strong>: <code>Task[]</code> — array de <code>{ id, title, description, reminder }</code></li>
+</ul>
+<h2 id="post-tasks">POST /tasks</h2>
+<p>Cadastra uma nova tarefa.</p>
+<ul>
+<li><strong>Request body</strong>: <code>{ title: string, description?: string, reminder?: string }</code></li>
+<li><strong>Response 201</strong>: <code>Task</code> criada, com <code>id</code> gerado no servidor</li>
+<li><strong>Response 400</strong> <em>(desejado, ver FR-006)</em>: quando <code>title</code> estiver ausente/vazio — <strong>não implementado hoje</strong></li>
+</ul>
+<h2 id="delete-tasksid">DELETE /tasks/:id</h2>
+<p>Remove uma tarefa pelo id.</p>
+<ul>
+<li><strong>Response 200</strong>: <code>{ message: "Task removida" }</code></li>
+<li><strong>Response 404</strong>: <code>{ message: "Task não encontrada" }</code> — id inexistente</li>
+<li><strong>Response 400</strong> <em>(desejado, ver FR-007)</em>: quando <code>:id</code> não for numérico — <strong>hoje cai em 404 via <code>NaN</code>, não implementado explicitamente</strong></li>
+</ul></div>
             </div>
         </div>
 
@@ -100,13 +153,13 @@ RNF04: O sistema deve possuir documentação em MkDocs</p></div>
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = "..",
+            var base_url = "../../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

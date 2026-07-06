@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Especificação - TODO List Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">TODO List Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../constitution/" class="nav-link">Constituição</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Feature 001 - Todo List MVP</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Especificação</a>
+</li>
+                                    
+<li>
+    <a href="../plan/" class="dropdown-item">Plano</a>
+</li>
+                                    
+<li>
+    <a href="../data-model/" class="dropdown-item">Modelo de Dados</a>
+</li>
+                                    
+<li>
+    <a href="../contracts/tasks-api/" class="dropdown-item">Contrato da API</a>
+</li>
+                                    
+<li>
+    <a href="../tasks/" class="dropdown-item">Tarefas</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../../constitution/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../plan/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/diegobrangel/todo-list/edit/master/docs/specs/001-todo-list-mvp/spec.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#feature-specification-todo-list-mvp" class="nav-link">Feature Specification: Todo List MVP</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#clarifications" class="nav-link">Clarifications</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#user-scenarios-testing-mandatory" class="nav-link">User Scenarios &amp; Testing (mandatory)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#requirements-mandatory" class="nav-link">Requirements (mandatory)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fora-de-escopo" class="nav-link">Fora de Escopo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#success-criteria-mandatory" class="nav-link">Success Criteria (mandatory)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#assumptions" class="nav-link">Assumptions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="feature-specification-todo-list-mvp">Feature Specification: Todo List MVP</h1>
+<p><strong>Feature Branch</strong>: <code>001-todo-list-mvp</code></p>
+<p><strong>Created</strong>: 2026-07-06</p>
+<p><strong>Status</strong>: Implemented (retrofitted spec for existing baseline application)</p>
+<p><strong>Input</strong>: User description: "Sistema de gerenciamento de tarefas: cadastro, listagem, remoção e lembretes de tarefas."</p>
+<h2 id="clarifications">Clarifications</h2>
+<h3 id="session-2026-07-06">Session 2026-07-06</h3>
+<ul>
+<li>Q: Título vazio/ausente no cadastro deve ser rejeitado pela API? → A: Sim, deve retornar 400 (comportamento desejado; hoje não implementado — ver FR-006 e task T010).</li>
+<li>Q: Um <code>id</code> não numérico em <code>DELETE /tasks/:id</code> deve gerar erro explícito? → A: Sim, 400 antes de tentar buscar (hoje cai em 404 "por acaso" via <code>NaN</code>; ver task T015).</li>
+<li>Q: O campo <code>reminder</code> deve validar formato de data? → A: Não na v1 — aceitar texto livre é intencional para não acoplar a UI a um formato específico ainda; revisitar se uma feature de notificação real for especificada.</li>
+</ul>
+<h2 id="user-scenarios-testing-mandatory">User Scenarios &amp; Testing <em>(mandatory)</em></h2>
+<h3 id="user-story-1-cadastrar-tarefa-priority-p1">User Story 1 - Cadastrar tarefa (Priority: P1)</h3>
+<p>Como usuário, quero cadastrar uma nova tarefa com título, descrição e lembrete opcional, para não esquecer o que preciso fazer.</p>
+<p><strong>Why this priority</strong>: Sem cadastro não há dados para listar ou remover; é a funcionalidade fundacional do sistema.</p>
+<p><strong>Independent Test</strong>: Enviar <code>POST /tasks</code> com título, descrição e lembrete e confirmar que a tarefa retorna com um <code>id</code> gerado e status <code>201</code>.</p>
+<p><strong>Acceptance Scenarios</strong>:</p>
+<ol>
+<li><strong>Given</strong> a lista de tarefas vazia, <strong>When</strong> o usuário cadastra uma tarefa com título "Estudar SDD", <strong>Then</strong> a tarefa aparece na listagem com um identificador único.</li>
+<li><strong>Given</strong> um cadastro sem título, <strong>When</strong> o usuário tenta salvar, <strong>Then</strong> o sistema deve rejeitar ou tratar o caso de dado ausente (ver Edge Cases).</li>
+</ol>
+<hr />
+<h3 id="user-story-2-listar-tarefas-priority-p1">User Story 2 - Listar tarefas (Priority: P1)</h3>
+<p>Como usuário, quero ver todas as tarefas cadastradas, para acompanhar o que já foi registrado.</p>
+<p><strong>Why this priority</strong>: É o retorno de valor imediato do cadastro — sem listagem o cadastro é invisível para o usuário.</p>
+<p><strong>Independent Test</strong>: Chamar <code>GET /tasks</code> e confirmar que todas as tarefas cadastradas anteriormente são retornadas em formato JSON.</p>
+<p><strong>Acceptance Scenarios</strong>:</p>
+<ol>
+<li><strong>Given</strong> três tarefas cadastradas, <strong>When</strong> o usuário acessa a listagem, <strong>Then</strong> as três tarefas aparecem com título, descrição e lembrete.</li>
+</ol>
+<hr />
+<h3 id="user-story-3-remover-tarefa-priority-p2">User Story 3 - Remover tarefa (Priority: P2)</h3>
+<p>Como usuário, quero remover uma tarefa concluída ou desnecessária, para manter minha lista organizada.</p>
+<p><strong>Why this priority</strong>: Depende da existência de tarefas cadastradas (US1), mas é essencial para o ciclo de vida completo da tarefa.</p>
+<p><strong>Independent Test</strong>: Cadastrar uma tarefa, chamar <code>DELETE /tasks/:id</code> com o id retornado e confirmar que ela some da listagem.</p>
+<p><strong>Acceptance Scenarios</strong>:</p>
+<ol>
+<li><strong>Given</strong> uma tarefa cadastrada, <strong>When</strong> o usuário remove pelo id, <strong>Then</strong> a tarefa não aparece mais em <code>GET /tasks</code>.</li>
+<li><strong>Given</strong> um id inexistente, <strong>When</strong> o usuário tenta remover, <strong>Then</strong> o sistema retorna erro 404 com mensagem "Task não encontrada".</li>
+</ol>
+<hr />
+<h3 id="user-story-4-definir-lembrete-priority-p3">User Story 4 - Definir lembrete (Priority: P3)</h3>
+<p>Como usuário, quero associar um lembrete (data/hora ou texto) a uma tarefa, para ser avisado sobre prazos.</p>
+<p><strong>Why this priority</strong>: Agrega valor sobre o CRUD básico, mas o sistema é utilizável sem lembretes.</p>
+<p><strong>Independent Test</strong>: Cadastrar uma tarefa informando o campo <code>reminder</code> e confirmar que ele é persistido e retornado na listagem.</p>
+<p><strong>Acceptance Scenarios</strong>:</p>
+<ol>
+<li><strong>Given</strong> uma tarefa nova, <strong>When</strong> o usuário informa um lembrete, <strong>Then</strong> o lembrete é salvo junto com a tarefa e retornado em <code>GET /tasks</code>.</li>
+</ol>
+<hr />
+<h3 id="edge-cases">Edge Cases</h3>
+<ul>
+<li>O que acontece quando o título não é informado no cadastro? (atualmente o backend aceita <code>undefined</code> sem validação — comportamento a revisitar)</li>
+<li>Como o sistema trata um id inválido (não numérico) em <code>DELETE /tasks/:id</code>? (atualmente <code>Number(id)</code> gera <code>NaN</code>, resultando em 404)</li>
+<li>O que acontece com as tarefas quando o servidor reinicia? (dados são perdidos — persistência é em memória, por decisão de arquitetura)</li>
+</ul>
+<h2 id="requirements-mandatory">Requirements <em>(mandatory)</em></h2>
+<h3 id="functional-requirements">Functional Requirements</h3>
+<ul>
+<li><strong>FR-001</strong>: O sistema DEVE permitir cadastrar tarefas com título, descrição e lembrete (RF01).</li>
+<li><strong>FR-002</strong>: O sistema DEVE listar todas as tarefas cadastradas (RF02).</li>
+<li><strong>FR-003</strong>: O sistema DEVE permitir remover uma tarefa pelo seu identificador (RF03).</li>
+<li><strong>FR-004</strong>: O sistema DEVE permitir associar um lembrete a uma tarefa (RF04).</li>
+<li><strong>FR-005</strong>: O sistema DEVE retornar erro 404 ao tentar remover uma tarefa com id inexistente.</li>
+<li><strong>FR-006</strong>: O sistema DEVE rejeitar (400) o cadastro de tarefa sem <code>title</code> (ver Clarifications; ainda não implementado — task T010).</li>
+<li><strong>FR-007</strong>: O sistema DEVE rejeitar (400) um <code>id</code> não numérico em <code>DELETE /tasks/:id</code> (ver Clarifications; ainda não implementado — task T015).</li>
+</ul>
+<h3 id="contratos-rest">Contratos REST</h3>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Rota</th>
+<th>Body</th>
+<th>Status sucesso</th>
+<th>Status erro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/tasks</td>
+<td>—</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/tasks</td>
+<td><code>{ title, description, reminder? }</code></td>
+<td>201</td>
+<td><em>(sem validação hoje — T010)</em></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/tasks/:id</td>
+<td>—</td>
+<td>200</td>
+<td>404 <code>{ message }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-entities">Key Entities</h3>
+<ul>
+<li><strong>Task</strong>: representa uma tarefa do usuário. Atributos: <code>id</code> (número, gerado via timestamp), <code>title</code> (string), <code>description</code> (string), <code>reminder</code> (string/data, opcional).</li>
+</ul>
+<h2 id="fora-de-escopo">Fora de Escopo</h2>
+<ul>
+<li>Autenticação ou identificação de usuários (a lista é global, sem <code>owner</code>).</li>
+<li>Edição de tarefa existente (<code>PUT</code>/<code>PATCH</code>) — apenas criar, listar e remover.</li>
+<li>Marcar tarefa como concluída sem removê-la.</li>
+<li>Notificação/disparo real do lembrete (o campo é apenas armazenado, não há agendamento).</li>
+<li>Persistência durável (arquivo ou banco de dados) — ver princípio "Persistência em Memória" na constituição.</li>
+</ul>
+<h2 id="success-criteria-mandatory">Success Criteria <em>(mandatory)</em></h2>
+<h3 id="measurable-outcomes">Measurable Outcomes</h3>
+<ul>
+<li><strong>SC-001</strong>: Um usuário consegue cadastrar, listar e remover uma tarefa em menos de 1 minuto usando a interface web.</li>
+<li><strong>SC-002</strong>: A API responde a <code>GET /tasks</code> e <code>POST /tasks</code> em menos de 200ms sob uso local/individual (sem carga concorrente relevante, dado o escopo do projeto).</li>
+<li><strong>SC-003</strong>: 100% das tarefas cadastradas via frontend aparecem corretamente na listagem sem perda de dados durante a sessão do servidor.</li>
+</ul>
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+<li>Escopo acadêmico/demonstrativo: não há autenticação de usuários nem multi-tenancy.</li>
+<li>Persistência em memória é aceitável — dados não sobrevivem a um restart do backend (RNF03 da constituição).</li>
+<li>Não há edição de tarefa (update) nem marcação de "concluída" no escopo atual; apenas criar, listar e remover.</li>
+<li>Lembrete é armazenado como valor livre (string), sem validação de formato de data.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
