@@ -5,7 +5,7 @@ Sistema de gerenciamento de tarefas desenvolvido utilizando Spec-Driven Developm
 ## Spec-Driven Development
 
 - **Constituição** (princípios do projeto): [`.specify/memory/constitution.md`](.specify/memory/constitution.md)
-- **Specs por funcionalidade**: [`specs/001-todo-list-mvp/`](specs/001-todo-list-mvp/) (`spec.md`, `plan.md`, `tasks.md`)
+- **Specs por funcionalidade**: [`specs/001-todo-list-mvp/`](specs/001-todo-list-mvp/) (`spec.md`, `plan.md`, `data-model.md`, `contracts/`, `tasks.md`)
 - **Templates e scripts do Spec Kit**: [`.specify/`](.specify/)
 
 Fluxo para novas funcionalidades (via skills do Spec Kit no Claude Code):
