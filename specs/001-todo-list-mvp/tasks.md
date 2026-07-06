@@ -14,6 +14,8 @@ description: "Task list for the Todo List MVP (retrofitted spec for an already-i
 - [x] T002 Backend inicializado com Express + cors (`apps/backend/package.json`)
 - [x] T003 Frontend inicializado com Vite + React (`apps/frontend/package.json`)
 - [ ] T004 [P] Configurar lint/format no backend (frontend já tem `eslint.config.js`; backend não tem)
+- [x] T023 [P] Adicionar script `dev` (nodemon) e `start` no `apps/backend/package.json` (nodemon já era devDependency, mas sem script)
+- [x] T024 [P] Parametrizar URL da API no frontend via `VITE_API_BASE_URL` (`.env.development` / `.env.production`), removendo URL de produção hardcoded em `App.jsx`
 
 ## Phase 2: Foundational
 
@@ -52,6 +54,7 @@ description: "Task list for the Todo List MVP (retrofitted spec for an already-i
 - [x] T020 Retrofit da documentação para o formato Spec Kit (constitution, spec, plan, tasks) — esta mudança
 - [ ] T021 [P] Adicionar testes automatizados (backend hoje não tem suíte real: `npm test` é placeholder)
 - [ ] T022 Adicionar `tests/` (contract/integration) conforme convenção do Spec Kit, cobrindo T010/T015/T018
+- [x] T025 Corrigir incongruências encontradas em revisão de conformidade SDD (T023, T024) e atualizar README.md com a lista completa de artefatos da feature (`data-model.md`, `contracts/`)
 
 ## Dependencies & Execution Order
 

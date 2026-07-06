@@ -18,7 +18,7 @@ Sistema de gerenciamento de tarefas com cadastro, listagem, remoção e lembrete
 
 **Testing**: Não há suíte automatizada configurada (`npm test` é placeholder no backend); validação manual via `quickstart.md`
 
-**Target Platform**: Backend hospedado no Render, frontend hospedado na Vercel
+**Target Platform**: Backend hospedado no Render, frontend hospedado na Vercel. URL da API configurada via `VITE_API_BASE_URL` (`apps/frontend/.env.development` → `http://localhost:3000`, `.env.production` → URL do Render), nunca hardcoded no código.
 
 **Project Type**: Web application (frontend + backend monorepo)
 
@@ -36,7 +36,7 @@ Sistema de gerenciamento de tarefas com cadastro, listagem, remoção e lembrete
 - ✅ MVC no Backend — `models/`, `controllers/`, `routes/` presentes e usados corretamente.
 - ✅ Persistência em Memória — `taskModel.js` é um array em memória, sem banco de dados.
 - ✅ Simplicidade (YAGNI) — nenhuma dependência além do necessário para CRUD + CORS.
-- ⚠️ Documentação Viva — antes desta mudança, a documentação (`docs/`) não seguia o formato Spec Kit; corrigido por esta feature retroativa.
+- ✅ Documentação Viva — `docs/` segue o formato Spec Kit (corrigido por esta feature retroativa); README e specs mantidos em sincronia com o código após revisão de conformidade.
 
 Nenhuma violação exige justificativa em Complexity Tracking.
 

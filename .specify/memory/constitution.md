@@ -22,6 +22,7 @@ Toda funcionalidade nova ou alterada deve ser refletida em `specs/<###-feature>/
 - **Stack obrigatória**: Node.js + Express no backend; React + Vite no frontend. Trocar a stack exige emenda a esta constituição.
 - **Contrato de API**: rotas de tarefas expostas sob `/tasks` (ou prefixo equivalente), respondendo JSON. Mudanças de contrato devem ser descritas em `contracts/` na spec da feature.
 - **CORS**: o backend deve permitir requisições do frontend (dev e produção) via middleware `cors`.
+- **Sem URL hardcoded**: o frontend nunca deve ter a URL da API fixa no código-fonte. A URL vem de `VITE_API_BASE_URL` (`.env.development`/`.env.production`), permitindo apontar o mesmo build para ambientes diferentes sem recompilar lógica.
 
 ## Development Workflow
 
@@ -39,4 +40,4 @@ Esta constituição prevalece sobre convenções informais do time. Emendas exig
 
 Toda spec e plano de implementação devem verificar conformidade com os princípios acima antes de avançar de fase (ver seção "Constitution Check" em `plan.md`).
 
-**Version**: 1.0.0 | **Ratified**: 2026-07-06 | **Last Amended**: 2026-07-06
+**Version**: 1.1.0 | **Ratified**: 2026-07-06 | **Last Amended**: 2026-07-06
